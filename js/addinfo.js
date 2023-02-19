@@ -47,31 +47,43 @@ submitbutton.onclick = (e)=>{
 function tableInfo(id,name)
 {
 
+    var addbtn= document.createElement('div');
+
+    addbtn.setAttribute('class',`container mt-3`)
+
+    addbtn.innerHTML =`<div class="container mt-3">
+    <input type="button" id="addmore" value="Add Filed" class="btn btn-warning mt-2">
+    <input type="button" value="Next Step" class="btn btn-info mt-2 mx-2">
+</div>`
+
+
+    moreinfo.innerHTML ='';
+  
+    addMoreFields(count);
+    moreinfo.append(addbtn);
+
+
+    
+
 
     //first we will ask for the field name
 
-     moreinfo.innerHTML ='';
-    addMoreFields(count);
-    moreinfo.innerHTML += `  <div class="container mt-3">
-    <input type="button" id="addmore" value="Add Filed" class="btn btn-warning mt-2 mx-2">
-    <input type="button" value="Next Step" class="btn btn-info mt-2 mx-2">
-</div>`;
+    
+  
+
+    moreinfo.style.display = "block";
 
 //for add more field
-try {
-    
-    document.getElementById('addmore').addEventListener('click',(e)=>{
 
-        count =  count+1;
-        addMoreFields(count);
+ 
+
+document.getElementById('addmore').onclick=(e)=>{
+
+    count =  count+1;
+    addMoreFields(count);
 
 
-    })
-
-} catch (error) {
-    
 }
-
 
 
 }
@@ -79,9 +91,13 @@ try {
 
 function addMoreFields(id)
 {
+
+    let doc = document.createElement('div');
+
+    doc.setAttribute('class',`continer ${id}`)
     id +=1;
 
-    moreinfo.innerHTML += `
+   doc.innerHTML += `
     <div class="container"> 
     
     
@@ -110,8 +126,15 @@ function addMoreFields(id)
     
     
     </div>
-
+<hr>
      
     
 `
+// addbtn.parentNode.insertBefore(doc,addbtn);
+moreinfo.appendChild(doc);
 }
+
+
+
+
+   
