@@ -3,6 +3,7 @@ var objectName = document.getElementById('oname');
 var objectid = document.getElementById("id");
 var objectType = document.getElementById("object");
 var moreinfo = document.getElementsByClassName('moreinfo')[0];
+var addbtninfo = document.getElementsByClassName('addbtninfo')[0];
 var count =0;
 //when user will click for the next step
 submitbutton.onclick = (e)=>{
@@ -60,7 +61,7 @@ function tableInfo(id,name)
     moreinfo.innerHTML ='';
   
     addMoreFields(count);
-    moreinfo.append(addbtn);
+    addbtninfo.append(addbtn);
 
 
     
@@ -113,8 +114,17 @@ function addMoreFields(id)
     </div>
 
     <div class="col-sm-3">
-        <label for="">Data Type <span class="text-danger">*</span></label>
-        <input type="number" name="" id="type${id}" class="form-control">
+        <label for="type${id}">Data Type <span class="text-danger">*</span></label>
+       <select id="type${id}" class="form-control"> 
+        <option value = "Integer">Integer</option>
+        <option value="Decimal"> Decimal </option>
+        <option value="Decimal"> Decimal </option>
+        <option value="Text"> Text </option>
+        <option value="Code"> Code </option>
+        <option value="Record"> Record </option>
+        <option value="Option"> Option </option>
+        <option value="BLOB"> BLOB </option>
+       </select>
     </div>
 
     <div class="col-sm-3">
