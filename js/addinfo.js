@@ -5,6 +5,8 @@ var objectType = document.getElementById("object");
 var moreinfo = document.getElementsByClassName('moreinfo')[0];
 var addbtninfo = document.getElementsByClassName('addbtninfo')[0];
 var count =0;
+var keyinfobox = document.getElementsByClassName('keyinfo')[0];
+
 //when user will click for the next step
 submitbutton.onclick = (e)=>{
 
@@ -54,7 +56,8 @@ function tableInfo(id,name)
 
     addbtn.innerHTML =`<div class="container mt-3">
     <input type="button" id="addmore" value="Add Filed" class="btn btn-warning mt-2">
-    <input type="button" value="Next Step" class="btn btn-info mt-2 mx-2">
+    <input type="button" value="Next Step" class="btn btn-info mt-2 mx-2 nextstep">
+    <input type="button" value="Generate Code" class="btn btn-success mt-2 mx-2">
 </div>`
 
 
@@ -85,6 +88,29 @@ document.getElementById('addmore').onclick=(e)=>{
 
 
 }
+
+
+  
+//for the next stpe where we need to ask the key information
+document.getElementsByClassName('nextstep')[0].addEventListener('click',()=>{
+
+    keyinfobox.style.display = 'block';//for the key div
+
+    let keyElement = document.createElement('div');
+
+    keyElement.setAttribute('class',"container mt-3");
+
+    keyElement.innerHTML = `
+    
+    <label for="key">Key</label>
+    <input type="text" name="" id="key" class="form-control">
+    <label for="fieldname"></label>
+    <input type="text" name="" id="fieldname" class="form-control">
+    `;
+
+
+
+})
 
 
 }
@@ -147,4 +173,4 @@ moreinfo.appendChild(doc);
 
 
 
-   
+ 
