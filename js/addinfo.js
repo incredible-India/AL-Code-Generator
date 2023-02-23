@@ -57,7 +57,7 @@ function tableInfo(id,name)
     addbtn.innerHTML =`<div class="container mt-3">
     <input type="button" id="addmore" value="Add Field" class="btn btn-warning mt-2">
     <input type="button" value="Next Step" class="btn btn-info mt-2 mx-2 nextstep">
-    <input type="button" value="Generate Code" class="btn btn-success mt-2 mx-2">
+    <input type="button" value="Generate Code" class="btn btn-success mt-2 mx-2 cg">
 </div>`
 
 
@@ -96,7 +96,9 @@ document.getElementsByClassName('nextstep')[0].addEventListener('click',()=>{
 
     keyinfobox.style.display = 'block';//for the key div
     document.getElementsByClassName('finalkeys')[0].style.display  = 'block';//THIS THE KEY for the adding new keys fileds and the generate
-   
+   //we need two add two buttong i.e code gegenration and nextstep for the fileds 
+   document.getElementsByClassName('nextstep')[0].style.display = 'none';
+   document.getElementsByClassName('cg')[0].style.display ='none'; 
     count = 0;
 })
 
