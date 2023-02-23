@@ -55,7 +55,7 @@ function tableInfo(id,name)
     addbtn.setAttribute('class',`container mt-3`)
 
     addbtn.innerHTML =`<div class="container mt-3">
-    <input type="button" id="addmore" value="Add Filed" class="btn btn-warning mt-2">
+    <input type="button" id="addmore" value="Add Field" class="btn btn-warning mt-2">
     <input type="button" value="Next Step" class="btn btn-info mt-2 mx-2 nextstep">
     <input type="button" value="Generate Code" class="btn btn-success mt-2 mx-2">
 </div>`
@@ -95,21 +95,29 @@ document.getElementById('addmore').onclick=(e)=>{
 document.getElementsByClassName('nextstep')[0].addEventListener('click',()=>{
 
     keyinfobox.style.display = 'block';//for the key div
+    document.getElementsByClassName('finalkeys')[0].style.display  = 'block';//THIS THE KEY for the adding new keys fileds and the generate
+   
+    count = 0;
+})
+
+//for the key buttons add new key fields
+
+document.getElementById('addmoreKEYS').addEventListener('click',()=>{
+
 
     let keyElement = document.createElement('div');
 
     keyElement.setAttribute('class',"container mt-3");
 
-    keyElement.innerHTML = `
+    keyElement.innerHTML += `
     
-    <label for="key">Key</label>
-    <input type="text" name="" id="key" class="form-control">
-    <label for="fieldname"></label>
-    <input type="text" name="" id="fieldname" class="form-control">
+    <label for="key${count}">Key</label>
+    <input type="text" name="" id="key${count}" class="form-control">
+    <label for="fieldname${count}">Filed Name</label>
+    <input type="text" name="" id="fieldname${count}" class="form-control">
     `;
 
-
-
+    keyinfobox.appendChild(keyElement);
 })
 
 
